@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOCONTROL | Expertos en Eliminación de Plagas</title>
+    <meta name="description" content="Más de 10 años eliminando plagas. Servicios profesionales de fumigación residencial, comercial e industrial.">
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.7;
+            background-color: #f8f8f8;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        header.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 65px;
+            margin-right: 15px;
+            transition: all 0.3s;
+        }
+        
+        .logo-text h1 {
+            color: #2e7d32;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text p {
+            color: #444;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 3px;
+            letter-spacing: 1.5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #2e7d32;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: #2e7d32;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero-logo {
+            height: 120px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .hero h1 span {
+            color: #4CAF50;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: 2px solid #4CAF50;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 15px 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: #4CAF50;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: #333;
+        }
+        
+        /* Secciones comunes */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #2e7d32;
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        /* Servicios */
+        .services {
+            background-color: #fff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-bottom: 4px solid #2e7d32;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+        
+        /* Plagas */
+        .pests {
+            background-color: #f5f5f5;
+        }
+        
+        .pests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .pest-item {
+            background-color: #fff;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .pest-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .pest-icon {
+            font-size: 50px;
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        
+        .pest-item h3 {
+            font-size: 18px;
+        }
+        
+        /* Sobre Nosotros */
+        .about {
+            background-color: #fff;
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.03);
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content h2 {
+            font-size: 36px;
+            color: #2e7d32;
+            margin-bottom: 25px;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .ceo-info {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #f8f8f8;
+            border-left: 4px solid #2e7d32;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .ceo-info h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+        
+        .ceo-info p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        /* Contacto */
+        .contact {
+            background-color: #f5f5f5;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+        }
+        
+        .contact-info h3 {
+            font-size: 28px;
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 16px;
+        }
+        
+        .contact-info i {
+            margin-right: 15px;
+            color: #2e7d32;
+            font-size: 20px;
+            width: 25px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+        }
+        
+        .contact-form select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a3e1a;
+            color: #fff;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #4CAF50;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+        
+        .footer-col ul li a:hover {
+            color: #4CAF50;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .footer-logo-text h3 {
+            color: #fff;
+            font-size: 22px;
+            margin-bottom: 5px;
+            padding-bottom: 0;
+        }
+        
+        .footer-logo-text h3::after {
+            display: none;
+        }
+        
+        .footer-logo-text p {
+            color: #ddd;
+            font-size: 14px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #4CAF50;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-img {
+                margin-bottom: 40px;
+                max-width: 600px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 15px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 15px;
+                display: block;
+                margin: 15px auto;
+                max-width: 250px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 30px;
+            }
+            
+            .hero-logo {
+                height: 90px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="thumbnail_PHOTO-2025-06-20-20-16-36.jpg" alt="ECOCONTROL Logo">
+                <div class="logo-text">
+                    <h1>ECOCONTROL</h1>
+                    <p>FUMIGACIONES</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#plagas">Plagas</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <img src="https://images.unsplash.com/photo-1585059895524-72359e06133a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fumigación profesional" class="hero-bg">
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <img src="thumbnail_PHOTO-2025-06-20-20-16-36.jpg" alt="ECOCONTROL Logo" class="hero-logo">
+                <h1>CONTROL <span>INTEGRADO</span> DE PLAGAS</h1>
+                <p>Servicios profesionales de fumigación doméstica, comercial e industrial con más de 10 años de experiencia en el sector.</p>
+                <div>
+                    <a href="#contacto" class="btn">SOLICITAR SERVICIO</a>
+                    <a href="tel:6971158210" class="btn btn-secondary">LLAMAR AHORA</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>NUESTROS SERVICIOS</h2>
+                <p>Soluciones integrales para el control y eliminación de plagas en cualquier entorno.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fumigación Doméstica">
+                    </div>
+                    <div class="service-content">
+                        <h3>FUMIGACIÓN DOMÉSTICA</h3>
+                        <p>Protección completa para tu hogar contra todo tipo de plagas. Utilizamos productos seguros para tu familia y mascotas.</p>
+                        <a href="#contacto" class="btn" style="margin: 20px 0 0; display: inline-block;">Contratar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fumigación Comercial">
+                    </div>
+                    <div class="service-content">
+                        <h3>FUMIGACIÓN COMERCIAL</h3>
+                        <p>Servicios especializados para negocios, restaurantes, hoteles y establecimientos comerciales, cumpliendo con normas sanitarias.</p>
+                        <a href="#contacto" class="btn" style="margin: 20px 0 0; display: inline-block;">Contratar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fumigación Industrial">
+                    </div>
+                    <div class="service-content">
+                        <h3>FUMIGACIÓN INDUSTRIAL</h3>
+                        <p>Control de plagas en fábricas, almacenes y plantas industriales con productos especializados y personal altamente capacitado.</p>
+                        <a href="#contacto" class="btn" style="margin: 20px 0 0; display: inline-block;">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plagas -->
+    <section class="pests" id="plagas">
+        <div class="container">
+            <div class="section-title">
+                <h2>PLAGAS QUE ELIMINAMOS</h2>
+                <p>Expertos en el control y erradicación de diversos tipos de plagas.</p>
+            </div>
+            <div class="pests-grid">
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>CUCARACHAS</h3>
+                </div>
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-spider"></i>
+                    </div>
+                    <h3>PULGAS</h3>
+                </div>
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-stroopwafel"></i>
+                    </div>
+                    <h3>ALACRANES</h3>
+                </div>
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-tick"></i>
+                    </div>
+                    <h3>GARRAPATAS</h3>
+                </div>
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-spider"></i>
+                    </div>
+                    <h3>ARAÑAS</h3>
+                </div>
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-rat"></i>
+                    </div>
+                    <h3>ROEDORES</h3>
+                </div>
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-fly"></i>
+                    </div>
+                    <h3>MOSCAS</h3>
+                </div>
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-cricket"></i>
+                    </div>
+                    <h3>GRILLOS</h3>
+                </div>
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-ant"></i>
+                    </div>
+                    <h3>HORMIGAS</h3>
+                </div>
+                <div class="pest-item">
+                    <div class="pest-icon">
+                        <i class="fas fa-otter"></i>
+                    </div>
+                    <h3>TERMITAS</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1585435557343-3b92c03a8e00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Equipo ECOCONTROL">
+                </div>
+                <div class="about-content">
+                    <h2>SOBRE NOSOTROS</h2>
+                    <p>ECOCONTROL Fumigaciones es una empresa líder en el control integral de plagas, con más de 10 años de experiencia en el sector. Nuestro equipo está formado por técnicos certificados y altamente capacitados en las últimas técnicas de fumigación.</p>
+                    <p>Utilizamos productos de alta calidad que garantizan resultados óptimos sin comprometer la salud de las personas ni el medio ambiente.</p>
+                    
+                    <div class="ceo-info">
+                        <h4>ERNESTO MONTOYA OBESO</h4>
+                        <p>CEO y Fundador de ECOCONTROL Fumigaciones</p>
+                        <p><i class="fas fa-phone"></i> 697 115 8210</p>
+                        <p><i class="fas fa-envelope"></i> ecocontrolservici1@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>CONTÁCTANOS</h2>
+                <p>Estamos listos para atender tus necesidades de control de plagas</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>INFORMACIÓN DE CONTACTO</h3>
+                    <p><i class="fas fa-phone"></i> 697 115 8210</p>
+                    <p><i class="fas fa-envelope"></i> ecocontrolservici1@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Servicio en toda el área metropolitana</p>
+                    <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 AM - 8:00 PM</p>
+                    <p><i class="fas fa-calendar-check"></i> Servicios de emergencia 24/7</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Nombre completo" required>
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="tel" placeholder="Teléfono" required>
+                        <select required>
+                            <option value="">Seleccione un servicio</option>
+                            <option value="domestico">Fumigación Doméstica</option>
+                            <option value="comercial">Fumigación Comercial</option>
+                            <option value="industrial">Fumigación Industrial</option>
+                            <option value="emergencia">Servicio de Emergencia</option>
+                        </select>
+                        <textarea placeholder="Describa su problema de plagas"></textarea>
+                        <button type="submit" class="btn">SOLICITAR SERVICIO</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="thumbnail_PHOTO-2025-06-20-20-16-36.jpg" alt="ECOCONTROL Logo">
+                        <div class="footer-logo-text">
+                            <h3>ECOCONTROL</h3>
+                            <p>FUMIGACIONES</p>
+                        </div>
+                    </div>
+                    <p>Control Integral de Plagas con más de 10 años de experiencia en el sector.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#servicios">Fumigación Doméstica</a></li>
+                        <li><a href="#servicios">Fumigación Comercial</a></li>
+                        <li><a href="#servicios">Fumigación Industrial</a></li>
+                        <li><a href="#servicios">Control de Termitas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#plagas">Plagas</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Métodos de Pago</a></li>
+                        <li><a href="#">Áreas de Cobertura</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ECOCONTROL Fumigaciones. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Efecto scroll header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling para los enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
